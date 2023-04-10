@@ -1,0 +1,27 @@
+From c5ad2ead9372ce8ad8c7e21d32762b55d2f57a9d Mon Sep 17 00:00:00 2001
+From: Steve Lhomme <robux4@ycbcr.xyz>
+Date: Sun, 26 Feb 2023 15:39:00 +0100
+Subject: [PATCH] use PROJECT_SOURCE_DIR to set the CMAKE_MODULE_PATH
+
+This allows using the source tree inside another project with
+add_subdirectory().
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index ee48f6c..a25d789 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -84,7 +84,7 @@ mark_as_advanced (WITH_HI_PREC_CLOCK WITH_FLOAT_STD_PREC_CLOCK
+ 
+ # Introspection:
+ 
+-list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/Modules)
++list (APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/Modules)
+ 
+ include (CheckFunctionExists)
+ include (CheckIncludeFiles)
+-- 
+2.38.1.windows.1
+

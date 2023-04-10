@@ -7,6 +7,8 @@ vcpkg_from_sourceforge(
         001_initialize-resampler.patch
         002_disable_warning.patch
         003_detect_arm.patch
+        0001-use-PROJECT_SOURCE_DIR-to-set-the-CMAKE_MODULE_PATH.patch
+        0001-generate-a-CMake-config-file.patch
 )
 
 vcpkg_check_features(
